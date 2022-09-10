@@ -1,0 +1,92 @@
+1- commande 3adyia : ftel + wo
+2- commande erdv : a- erdv b- erdv , tfel et wo
+ftel fihe les infos techniques
+
+------------------- Planification ----------------------------
+erdv : contient la date de la visite du technicien (date debut et date fin) + info client (adresse obligatoire) 
+
+chaque technicien a un emploi de temps ==> affectation en terme de crenaux + zone geo + commande (departement)
+on doit avoir la possibilite d'archiver un tech  (sans qu'il a des commane en cours)
+==> Pour une intervention , avoir une vision (ach dare) par commande , tech et zone geo
+
++(IAM) --- INWI (operator) +  WANA(operator)
+Zouani (end custumor) -- commande INWI (operateur) -- commande Kosc --commande Maneo (travaux)
+==> 
+1- prise de rdv ( 1 appel + 2 appel + 3 appel avec Zouani) :: fichier excel 3mer 1 appel + 2 appel + 3 appel + Date Rdv
+avec possibilite d'ajouter un commentaire en cas de client injoinable ==> 2 mail :: 1 pour le client finale(ZOUANI) avec capture de 
+-objet + corps + date envoi et si pendant 24h (sachant que le client n'a pas repondu) il faut envoyer un mail a Kosc:::
+component : prise-rdv
+reference + reference wo + 1 appel + 2 appel + 3 appel + Date Rdv + email client +  email kosc + commentaire client + commentaire kosc
+
+2- affectation de tech ( en se basant sur son calendrier) : fichier excel la date intervention (jj-MM-yyy HH) +
+je doit mentionner dans le calendrier du tech la reference de la commande (bloquer le crenaux)
+NB: temps x : chef des tech (charge d'afaire) : tay3tik les disponnibilites tech par departement
+
+reference + reference wo +  date intervention + technicien + departement + date intervention debut + date intervention fin
+affectation-technicien 
+3- mail de planification a Kosc : O-W-operator-nomClient
+
+4- en cas d'empechement (soit Kosc demande ou le service tech demande) pour le tech on peut prevoir un mail de replanification a Kosc
+
+--------------------------- Cloture -------------------------------
+1- le technicien fait un rapport : soit OK soit KO
+en cas de OK ==> generer un code de décharge (???)
+en cas de KO ==> c'est Kosc qui genere le  code de décharge mais Kosc doit valider le KO (en se basant sur raison)
+apres x jours Kosc va nous envoyer un nouveau W (avec le meme O)
+
+
+---------------------- CDD :::: Kola seba7 (debut de journee) Ali tayd5el ychof : les interventions planifié pour detecter les KO les OK + les vides 
+commentaire technicien et commentaire et commentaire client (fichier CRI (compte rendu intervention)) : pour avoir l'historique
+surtt en cas de KO --  ft7ena ni9ach si OK petite app mobile pour generer code decahrge sans appel tele --
+
+
+---------------- fin journer Ali ------------------
+generer un mail avec PJ qui contient les interventions cloturés (OK ou KO)
+en cas de KO tu ferme le W et le O il est tjr ouvert (interventions cloturé (KO ou OK) ==== code de décharge généré)
+Ali taysift hi li cloturé
+
+------------------- Nadia fin journee----------------
+un tableau de planification :: elle doit remplir les date de planification (delai 3 jours)
+on doit afficher les planification non prise order by criticite (delai de 3 jours) sans 1 appel
+
+
+Report :::: NADIAAAA
+
+1- Maillage (BD) :: import fichier excel
+
+2-1 Planifcation :: dateIntervention + 1,2,3 appel, departement, technicien(dispo : date + departement) ::: dateOuverture
+(dateIntervention == null ==> etat non planifie trie par 3,2,1)
+2-0 (page : disponnibilite technicien)
+2-2 : button  send mail injoinable ==> mail client final (injoinable)
+2-3 : button send mail Kosc ==> (apres 24h de mail injoinable) mail Kosc
+
+3-1 Page CDD (intervention :: planification where dateIntervetion = now) :
+si c'est KO generer decharge (Kosc) si c'est OK generer decharge (Maneo)
+
+
+3-2 dans tt les cas send mail to Kosc fihe CRI (pdf PJ : donner la possibilite de oindre CRI, DEVIS ...) 
+==> email de cloture (devis : etat cloture_avec_devis)
+
+4-1- Suivi : liste des orderKosc cloture (li wselni CRI o krtbeti CRI f app)  ==> (OK ou KO)
+4-2 mail avec PJ fiha tt les OK et KO
+
+5- technicien (planing) : calendrier
+
+6- KPI :: 
+export :::: Kizeo, Suivi, 
+
+
+NB: dateCRI ( t9der tkon machi f nfess nhare)
+
+
+
+
+
+
+
+
+
+
+
+
+

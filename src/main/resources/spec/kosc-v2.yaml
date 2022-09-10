@@ -1,0 +1,332 @@
+#----------------------- Ordre --------------------------
+OrdreKosc_SUB-MODULE(kosc)_MENU(Kosc Order):
+    id: Long ID
+    #--------------------- NADIA ------------------------
+    reference: String
+    referenceWorkOrder: String REF_REQUIERED
+    codeDecharge: String
+    supplierService: String
+
+    dateDebutTraitement: Date
+    endCustumorName: String
+    endCustumorSiret: String
+    endCustumorFirstName: String
+    endCustumorLastName: String
+    endCustumorZipcode: String
+    endCustumorStreetName: String
+    endCustumorStreetNumber: String #Kizeo
+    endCustumorCity: String
+    endCustumorBuilding: String
+    endCustumorStairs: String
+    endCustumorFloor: String
+    endCustumorContactFirstName: String
+    endCustumorContactLastName: String
+    endCustumorContactPhone: String
+    endCustumorContactCellPhone: String
+    endCustumorContactEmail: String
+
+
+    operator: Operator
+    company: String
+
+    referenDossier: String
+    submissionDate: Date
+
+    datePremierAppel: Date
+    dateDeuxiemeAppel: Date
+    dateTroisiemeAppel: Date
+
+    datePriseRdv: Date #KPI
+    dateRdv: Date  #KPI ????
+
+    dateAppelReplanification: Date
+    dateInterventionTechnique: Date
+    dateOuverture: Date #imta t7el had order ==> groupe kolhom 3nedhom nafess     dateOuverture
+    envoiMailClient: Boolean
+    envoiMailKosc: Boolean
+
+    #--------------------- Maillage KOSC ------------------------
+    coordonnePboY: String
+    hauteurPbo: String
+    typeMaterielPbo: String
+    typePbo: String
+    conditionSyndics: String
+    typeRacordementPboPto: String
+    autreInfosPboPto: String LARGE
+    codeAccesImmeuble: String
+    contacteImmeuble: String
+    pmaAccessible: String
+    infoObtentionCle: String
+    localeIpm: String
+    contactsSyndic: String
+    racordementLong: Boolean # c'est le meme que     racordement dans CDD ?
+
+
+    oc1: String
+    nomModulePm1: String
+    positionModulePm1: String
+    referenceCableModulePm1: String
+    referenceTubeModulePm1: String
+    informationFibreModulePm1: String
+    referenceCablePbo1: String
+    informationTubePbo1: String
+    informationFibrePbo1: String
+    connecteurPriseNumero1: String
+    connecteurPriseCouleur1: String
+    reserve1: String LARGE
+
+    oc2: String
+    nomModulePm2: String
+    positionModulePm2: String
+    referenceCableModulePm2: String
+    referenceTubeModulePm2: String
+    informationFibreModulePm2: String
+    referenceCablePbo2: String
+    informationTubePbo2: String
+    informationFibrePbo2: String
+    connecteurPriseNumero2: String
+    connecteurPriseCouleur2: String
+    reserve2: String LARGE
+
+    oc3: String
+    nomModulePm3: String
+    positionModulePm3: String
+    referenceCableModulePm3: String
+    referenceTubeModulePm3: String
+    informationFibreModulePm3: String
+    referenceCablePbo3: String
+    informationTubePbo3: String
+    informationFibrePbo3: String
+    connecteurPriseNumero3: String
+    connecteurPriseCouleur3: String
+    reserve3: String LARGE
+
+    oc4: String
+    nomModulePm4: String
+    positionModulePm4: String
+    referenceCableModulePm4: String
+    referenceTubeModulePm4: String
+    informationFibreModulePm4: String
+    referenceCablePbo4: String
+    informationTubePbo4: String
+    informationFibrePbo4: String
+    connecteurPriseNumero4: String
+    connecteurPriseCouleur4: String
+    reserve4: String LARGE
+
+    #--------------------- CDD ------------------------
+    departement: Departement
+    technicien: Technicien
+    dateEnvoiCri: Date
+    pboReel: String
+    numeroSerieOnt: String
+    #--------------------- Kizeo ------------------------
+
+    workOrderType: String
+    product: String
+    provider: String
+    providerFileType: String
+    spliter: String
+    existingOtp: Boolean
+    profile: String
+    comment: String LARGE
+    providerSlId: String
+
+    referencePrestationPrise: String
+    client: Client
+
+
+    #--------------------- SPEC ------------------------
+
+
+    dateInterventionTechniqueDebut: Date
+    dateInterventionTechniqueFin: Date
+
+    templateEmailClientInjoinable: TemplateEmailClientInjoinable
+    objetClient: String
+    corpsClient: String LARGE
+    envoyeClient: Boolean
+    dateEnvoiClient: Date
+
+    templateEmailKosc: TemplateEmailKosc
+    objetKosc: String
+    corpsKosc: String LARGE
+    envoyeKosc: Boolean
+    dateEnvoiKosc: Date
+
+    templateEmailPlanification: TemplateEmailPlanification
+    objetPlanification: String
+    corpsPlanification: String LARGE
+    envoyePlanification: Boolean
+    dateEnvoiPlanification: Date
+
+    templateEmailReplanification: TemplateEmailReplanification
+    objetReplanification: String
+    corpsReplanification: String LARGE
+    envoyeReplanification: Boolean
+    dateEnvoiReplanification: Date
+
+    templateEmailReport: TemplateEmailReport
+    objetReport: String
+    corpsReport: String LARGE
+    envoyeReport: Boolean
+    dateEnvoiReport: Date
+
+    commentaireTechnicien: String LARGE
+    commentaireClient: String LARGE
+    commantaireCloture: String LARGE
+
+    etatDemandeKosc: EtatDemandeKosc #RDV, Planification en cours, Planifié, Relanification en cours, Replanifié, Report,  Ko, KO
+
+
+    templateEmailCloture: TemplateEmailCloture
+    objetCloture: String
+    corpsCloture: String LARGE
+    envoyeCloture: Boolean
+    dateEnvoiCloture: Date
+    emailCloturePieceJoints: String
+
+    templateSuivi: TemplateSuivi
+    objetSuivi: String
+    corpsSuivi: String LARGE
+    envoyeSuivi: Boolean
+    dateEnvoiSuivi: Date
+
+
+#----------------------- Referentiel --------------------------
+
+KoscEmployee_SUB-MODULE(referentiel)_MENU(Referentiel):
+    id: Long ID
+    firstName: String
+    lastName: String
+    phone: String
+    cellPhone: String
+    email1: String
+    email2: String
+    email3: String
+
+
+EtatDemandeKosc_SUB-MODULE(referentiel)_MENU(Referentiel):
+    id: Long ID
+    code: String REF_REQUIERED
+    libelle: String LABEL_REQUIERED
+
+Operator_SUB-MODULE(referentiel)_MENU(Referentiel):
+    id: Long ID
+    reference: String REF_REQUIERED
+    libelle: String LABEL_REQUIERED
+
+Client_SUB-MODULE(referentiel)_MENU(Referentiel):
+    id: Long ID
+    email: String
+    nom: String
+    prenom: String
+
+#----------------------- Configuration --------------------------
+
+TemplateEmailCloture_SUB-MODULE(configuration)_MENU(Configuration):
+    id: Long ID
+    code: String REF_REQUIERED
+    libelle: String LABEL_REQUIERED
+    objet: String
+    corps: String LARGE
+
+TemplateSuivi_SUB-MODULE(configuration)_MENU(Configuration):
+    id: Long ID
+    code: String REF_REQUIERED
+    libelle: String LABEL_REQUIERED
+    objet: String
+    corps: String LARGE
+
+
+TemplateEmailClientInjoinable_SUB-MODULE(configuration)_MENU(Configuration):
+    id: Long ID
+    code: String REF_REQUIERED
+    libelle: String LABEL_REQUIERED
+    objet: String
+    corps: String LARGE
+
+
+TemplateEmailReport_SUB-MODULE(configuration)_MENU(Configuration):
+    id: Long ID
+    code: String REF_REQUIERED
+    libelle: String LABEL_REQUIERED
+    objet: String
+    corps: String LARGE
+
+TemplateEmailPlanification_SUB-MODULE(configuration)_MENU(Configuration):
+    id: Long ID
+    code: String REF_REQUIERED
+    libelle: String LABEL_REQUIERED
+    objet: String
+    corps: String LARGE
+
+TemplateEmailReplanification_SUB-MODULE(configuration)_MENU(Configuration):
+    id: Long ID
+    code: String REF_REQUIERED
+    libelle: String LABEL_REQUIERED
+    objet: String
+    corps: String LARGE
+
+TemplateEmailKosc_SUB-MODULE(configuration)_MENU(Configuration):
+    id: Long ID
+    code: String REF_REQUIERED
+    libelle: String LABEL_REQUIERED
+    objet: String
+    corps: String LARGE
+
+
+#----------------------- Technicien --------------------------
+Technicien_SUB-MODULE(technicien)_MENU(Gestion Technicien):
+    id: Long ID
+    nom: String
+    prenom: String
+    cellPhone: String
+    email: String
+    emailAttachement: String
+    entreprise: Entreprise
+    identifiant: String REF_REQUIERED
+    motPasse: String
+    adresseOnt: String LARGE
+
+Entreprise_SUB-MODULE(technicien)_MENU(Gestion Technicien):
+    id: Long ID
+    libelle: String LABEL_REQUIERED
+    code: String REF_REQUIERED
+
+ArretTravail_SUB-MODULE(technicien)_MENU(Gestion Technicien):
+    id: Long ID
+    technicien: Technicien REQUIERED
+    dateDebut: Date REQUIERED
+    dateFin: Date REQUIERED
+    raisonArretTravail: RaisonArretTravail REQUIERED
+    comment: String LARGE
+
+
+RaisonArretTravail_SUB-MODULE(technicien)_MENU(Gestion Technicien):
+    id: Long ID
+    libelle: String LABEL_REQUIERED
+    code: String REF_REQUIERED
+
+DepartementTechnicien_SUB-MODULE(technicien)_MENU(Gestion Technicien):
+    id: Long ID
+    technicien: Technicien REQUIERED
+    departement: Departement REQUIERED
+    dateDebut: Date REQUIERED
+    dateFin: Date REQUIERED
+
+Departement_SUB-MODULE(technicien)_MENU(Gestion Technicien):
+    id: Long ID
+    libelle: String LABEL_REQUIERED
+    code: String REF_REQUIERED
+    region: Region REQUIERED
+
+Region_SUB-MODULE(technicien)_MENU(Gestion Technicien):
+    id: Long ID
+    libelle: String LABEL_REQUIERED
+    code: String REF_REQUIERED
+#----------------------- END Technicien --------------------------
+Chercheur_SUB-MODULE(technicien)_MENU(Gestion Technicien)_ACTOR:
+    id: Long ID
+    numeroMatricule: String REF
+    role: String NOT_INCLUDED
